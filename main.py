@@ -7,6 +7,13 @@ app = FastAPI()
 class RequestData(BaseModel):
     data: List[str]
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Backend is running!"}
+
+
+
 @app.get("/bfhl")
 def get_code():
     return {"operation_code": 1}
